@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}
+    register
+{% endblock %}
+
+{% block main %}
+
+<div class="form-container">
+    <form action="/register" method="post" class="styled-form">
+        <h2>Register</h2>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input autocomplete="off" autofocus name="username" placeholder="Username" type="text">
+            <p class="message">{{user}}</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input name="password" placeholder="Password" type="password">
+            <p class="message">{{password}}</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Confirm Password</label>
+            <input  name="confirmation" placeholder="Confirm Password" type="password">
+            <p class="message">{{confirmation}}</p>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+        <p class="register-text">
+            Already have an account? 
+            <a class="link" href="\login">Login</a>
+        </p>
+    </form>
+</div>
+
+
+{% endblock %}

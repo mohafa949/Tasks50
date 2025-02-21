@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<form action="/tasks" method="post">
+    <div class="container">
+        <div class="block">
+            <h1>Your Tasks :</h1>
+                {% for task in table %}
+                        <label>
+                            <input type="checkbox" name="option" value="{{task['task']}}">
+                            {{task["task"]}}
+                        </label><br>
+                {% endfor %}
+        </div>
+    </div>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

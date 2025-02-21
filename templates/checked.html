@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1>Checked Tasks :</h1>
+    <div >
+        <table class="table">
+            <thead class="table th">
+                <tr>
+                    <th>Task</th>
+                    <th>Cheked Date</th>
+                </tr>
+            </thead>
+            <tbody >
+                {% for s in table %}
+                    <tr>
+                        <td>&#9745;  {{s["task"]}}</td>
+                        <td>{{s["date"]}}</td>
+                    </tr>
+                {% endfor %}
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

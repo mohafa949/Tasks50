@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title>Tasks50 : {% block title %}{% endblock %}</title>
+
+        <script>
+            function addTask() {
+                let input = document.getElementById("task");
+                let container = document.getElementById('tasks-list');  
+                let value = input.value;
+                if (!value){
+                    alert("Please enter a task.");
+                    return;
+                }
+                let inputCount = container.childElementCount + 1;
+                let newInput = document.createElement('div');
+                newInput.innerHTML = `<input type="hidden" id="task${inputCount}" name="tasks" value="${value}"><p>- ${value}</p>`
+
+                container.appendChild(newInput);
+                }
+        </script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-left">
+                <a class="logo" href="/tasks">Tasks50</a>
+                <nav class="header-left-nav">
+                    <a href="/tasks"> Your tasks</a>
+                    <a href="/">Add Task</a>
+                    <a href="/checked">Checked Tasks</a>
+                </nav>
+            </div>
+            <nav class="header-right-nav">
+                <a href="/logout">Log Out</a>
+            </nav>
+        </header>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+    </body>
+
+</html>

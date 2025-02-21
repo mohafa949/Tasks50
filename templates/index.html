@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+<h1>Hello {{name}}, Welcome To Tasks50</h1>
+
+    <form action="/" method="post">
+        <div class="container">
+            <div class="block">
+                <h1>Your Tasks :</h1>
+                {% for task in table %}
+                    <p>
+                        - {{task["task"]}}
+                    <p>
+                {% endfor %}
+                <div id="tasks-list">
+
+                </div>
+                <input type="text" id="task" placeholder="New Task">
+                <button type="button" onclick="addTask()">Add Task</button>
+            </div>
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
